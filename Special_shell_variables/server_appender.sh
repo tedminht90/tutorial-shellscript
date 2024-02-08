@@ -4,6 +4,12 @@ readonly CONF_FILE="./fpdn.properties"
 readonly SERVER_NAMES="server1 server2 server3"
 readonly DEFAULT_USER="TriTM"
 
+# Check if the file is empty
+if [[ ! -s "${CONF_FILE}" ]]; then
+    echo "Error: ${CONF_FILE} is empty"
+    exit 1
+fi
+
 fpdn=$(cat "${CONF_FILE}")
 
 #echo ${fpdn}
