@@ -8,10 +8,10 @@ fpdn=$(cat "${CONF_FILE}")
 
 #echo ${fpdn}
 
-for item in ${fpdn}; do
+for host in ${fpdn}; do
     #echo "hostname: ${item}"
     for server in ${SERVER_NAMES}; do
         #echo "Server: ${server}"
-        echo "${DEFAULT_USER}@${server}.${item}"
+        echo "${DEFAULT_USER}@${server}.${host}"
     done
 done
