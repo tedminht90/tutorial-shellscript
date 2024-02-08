@@ -18,7 +18,7 @@ if [[ $# != 1 ]]; then
 fi
 
 steps=${1}
-
+# bc is a command line calculator
 calories_burned=$(echo "${steps}*${calories_per_step=0.04}" | bc )
 
 echo "Calories burned for ${steps}" steps: ${calories_burned}
