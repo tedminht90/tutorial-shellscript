@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
 
 readonly WORKING_DIR=$(dirname $(readlink -f ${0}))
-readonly SCRIPT_NAME=${0##*/}
+readonly SCRIPT_NAME=${0##*/} # this is the same as $(basename ${0}) ->  special-zero3.sh
+#readonly test=$(basename "$0")
 readonly CL_ARGS_ERROR=155
 
 #echo "${WORKING_DIR}"
 # /Users/tritaminh/Desktop
 # script
 #cd "${WORKING_DIR}/.."
+
+#echo "Script name: ${SCRIPT_NAME}"
+
+#echo "Test: ${test}"
 
 
 usage() {
@@ -25,7 +30,7 @@ USAGE
 
 terminate() {
     local msg="$1"
-    code="${2:-160}"
+    local code="${2:-160}"
     echo "Error: ${msg}" >&2
     exit "${code}"
 }
@@ -47,5 +52,5 @@ echo "Hello, ${name}! Welcome to my script."
 exit 0
 
 
-# Usage: special-zero3.sh
+# Usage: special-zero3.sh tritm4
 # This is a usage message with instructions on how to use the script.
