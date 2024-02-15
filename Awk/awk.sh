@@ -140,3 +140,15 @@ awk -F "|" -v var="Employee's First Name: " '{print var, $2}' employees.txt
 # Employee's First Name:  Andy
 # Employee's First Name:  Mark
 # Employee's First Name:  Jing
+
+awk -F "|" -v high_salary="90000" '$7 >= high_salary {print $2,$7 }' employees.txt
+# Feng 90000
+# Andy 95000
+# Jing 100000
+
+awk -F "|" -v high_salary="90000"  -v low_salary="65000" '$7 >= high_salary || $7 <= low_salary {print $2,$7 }' employees.txt
+# Kriti 60000
+# Enrique 65000
+# Feng 90000
+# Andy 95000
+# Jing 100000
