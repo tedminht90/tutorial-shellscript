@@ -21,7 +21,7 @@ USAGE
 }
 
 # Add your guard clause here
-
+# $# là số lượng tham số truyền vào và tập tin có tồn tại hay không
 if [[ $# -ne 1 || ! -s "${1}" ]]; then
   usage
   terminate "Please pass just one command line argument as a file that exists and is non-empty" "${ERROR_FILE}"
