@@ -16,3 +16,6 @@ awk '{ sum += $1 } END { printf("Average Salary: %d\n", sum / NR) }' "${salary_f
 # awk -v awk_var="Hello" 'END { print awk_var }' lines.txt
 
 # awk -v awk_var="Hello" 'BEGIN { print awk_var }' lines.txt
+
+# can not run becasue of the NR begin == 0 (can not / )
+awk '{ sum += $1 } BEGIN { printf(" Average Salary BEGIN: %d\n", sum/NR) }' "${salary_file}"
