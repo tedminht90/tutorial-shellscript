@@ -152,3 +152,29 @@ awk -F "|" -v high_salary="90000"  -v low_salary="65000" '$7 >= high_salary || $
 # Feng 90000
 # Andy 95000
 # Jing 100000
+
+
+awk -v awk_var="Hello" '{ print awk_var }' lines.txt
+# Hello
+# Hello
+# Hello
+# Hello
+# Hello
+# Hello
+# Hello
+# Hello
+# Hello
+# Hello
+# Hello
+# Hello
+# Hello
+# Hello
+# Hello
+
+awk -v awk_var="Hello" 'END { print awk_var }' lines.txt
+# END block chỉ xử lý sau khi awk đã xử lý xong input lines.txt
+# Hello
+
+awk -v awk_var="Hello" 'BEGIN { print awk_var }' lines.txt
+# BEGIN block chỉ thực hiện 1 lần khi xử lý dữ liệu đầu vào input lines.txt
+# Hello

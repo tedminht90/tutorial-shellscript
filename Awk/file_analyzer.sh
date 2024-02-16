@@ -14,7 +14,7 @@ if [[ ! -f "${input_file}" ]] || [[ ! -s "${input_file}" ]]; then
     exit 1
 fi
 # Your awk command goes here
-
+# END block to count the total number of lines and the total number of columns
 awk -F "|" 'END {print NR}' "${input_file}"
 awk -F "|" 'END {print NF}' "${input_file}"
 
